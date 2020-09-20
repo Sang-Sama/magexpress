@@ -1,0 +1,86 @@
+        {{!-- post: rows[0],
+          comment: c,
+          somebycat: f --}}
+<div  class="row">
+  <div  class="col-md-8" style="border-right: solid 0.5px gray;"> 
+      <div >
+        <h6 style="text-align: right;">{{post.Date}}</h6>
+        <h3 style="text-align: left;"><b>{{post.Title}}</b></h3>
+        <h5 class="post-content-detail ">{{{post.Content}}}</h5>
+        <p style="text-align: right;font: 400 28px arial;"><strong>{{post.Writer}}</strong></p>
+      </div>
+      {{!-- ==================================== comment============================== --}}
+      <div class="comment-content">
+              <div class="post-container">
+                <div class="card-title"> <h3>Ý kiến ({{comment.length}})</h3></div>
+                {{#each comment}}
+                <div class="post-detail">
+                  <div class="user-info">
+                    <h5><a href="timeline.html" class="profile-link">{{this.UserName}}</a> </h5>
+                    
+                  </div>
+                  <div class="reaction">
+                    <p class="text-muted">{{this.Time}} <i class="fa fa-thumbs-up"></i></p>
+                  </div>
+                  <div class="line-divider"></div>
+                  <div class="post-textt">
+                    <p>{{this.Content}} </p>
+                  </div>
+                  <div class="line-divider"></div>
+                </div>
+                {{/each}}
+              </div>
+        </div> 
+        <form method="POST">
+                  <div class="post-comment">
+                    <input type="text" class="form-control" name="comment" placeholder="Post a comment">
+                  </div>
+                  </form>
+    </div>
+  <div style=""  class="col-md-4">
+     <div style="padding:3px;float:left">
+       <img style="margin-bottom: 20px; min-height:500px" class="card-img-top" src="https://i.ibb.co/x6BtSdK/20448935.jpg" alt="No image">
+       <h3 style="text-decoration: solid red;color:rgb(4, 53, 4)">Bài Viết Liên Quan</h3>
+        <div  class="card" style="width: 22rem;">
+            <a href="/post/detail/{{somebycat.[0].PostID}}">
+            <img class="card-img-top" src="{{somebycat.[0].Imagelink}}" alt="No image">
+            </a>
+            <div class="card-body">
+                <a href="/post/detail/{{somebycat.[0].PostID}}" class="post-title">{{somebycat.[0].Title}}</a>
+                <p class="card-text vertical-card-text"> {{somebycat.[0].Tinycontent}}</p>
+            </div>
+        </div>
+                <div  class="card" style="width: 22rem;">
+            <a href="/post/detail/{{somebycat.[4].PostID}}">
+            <img class="card-img-top" src="{{somebycat.[4].Imagelink}}" alt="No image">
+            </a>
+            <div class="card-body">
+                <a href="/post/detail/{{somebycat.[4].PostID}}" class="post-title">{{somebycat.[4].Title}}</a>
+                <p class="card-text vertical-card-text"> {{somebycat.[4].Tinycontent}}</p>
+            </div>
+              <a href="/post/detail/{{somebycat.[1].PostID}}" class="post-title vetical-right-content">{{somebycat.[1].Title}}</a>
+              <a href="/post/detail/{{somebycat.[2].PostID}}" class="post-title vetical-right-content">{{somebycat.[2].Title}}</a>
+              <a style="border-bottom: none;" href="/post/detail/{{somebycat.[3].PostID}}" class="post-title vetical-right-content">{{somebycat.[3].Title}}</a>
+
+        </div>
+      </div>
+  </div>
+</div>
+ <h3 style="text-decoration: underline;">Bài Viết Đề Xuất</h3>
+<div  class="row">
+  {{#each somebycat}}
+  <div style="padding: 10px;">
+    <div  style="width: 13rem;max-height:1000px">
+      <img class="card-img-top" src="{{Imagelink}}" alt="Card image cap">
+      <div >
+        <h5 class="card-title">{{Title}}</h5>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
+<div class="row">
+  <img src="https://i.ibb.co/99cQGwg/spotify-80s-ads-2019.jpg" class="img-fluid" alt="">
+</div>
+
+

@@ -1,0 +1,51 @@
+
+
+<div class="card">
+<div style="margin-left: 5px;" class="row">
+    {{#each categories}}
+        <a class="btn" href="/admin/post/bycat/{{CatID}}">{{CatName}}</a>
+    {{/each}}
+    </div>
+  {{#if this.empty}}
+  <div class="card-body">
+    <p class="card-text">Không có dữ liệu.</p>
+  </div>
+  {{else}}
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col" class="text-center">ID</th>
+   
+         <th scope="col">Witer</th>
+        <th scope="col">Title</th>
+        <th scope="col">Category</th>
+        <th scope="col">Tiny Content</th>
+        <th scope="col">Status</th>
+        <th scope="col">Conf</th>
+        <th scope="col">Date</th>
+        <th scope="col">&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each this.post}}
+      <tr>
+        <th scope="row" class="text-center">{{PostID}}</th>
+        <td>{{UserID}}</td>
+        <td>{{Title}}</td>
+        <td>{{Category}}</td>
+        <td>{{Tinycontent}}</td>
+        <td>{{Status}}</td>
+        <td>{{Conf}}</td>
+        <td>{{Date}}</td>
+        <td class="text-right">
+          <a class="btn btn-primary btn-sm" href="/admin/repair/{{PostID}}" role="button">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </a>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  {{/if}}
+</div>
+    </div>

@@ -1,0 +1,103 @@
+
+  {{{_sections.css}}}
+{{#section 'js'}}
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+  tinymce.init({
+    selector: '#txtFullDes',
+    height: 450,
+    plugins: 'paste image link autolink lists table media',
+    menubar: false,
+    toolbar: [
+      'undo redo | bold italic underline strikethrough | numlist bullist | alignleft aligncenter alignright | forecolor backcolor | table link image media',
+    ],
+  });
+
+  </script>
+{{/section}}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/writer">Bài Viết Mới</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto ">
+            <li class="nav-item ">
+              <a class="nav-link" href="/writer/admit">Đã Được Duyệt <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/writer/deny">Bị Từ Chối</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/writer/approvedyet">Chưa Duyệt</a>
+            </li>
+          </ul>
+        </div>
+         <form id="frmLogout" action="/account/logout" method="POST"></form>
+         {{#if lcIsAuthenticated}}
+      <li style="list-style:none;" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-user" aria-hidden="true"></i>
+          Welcome, <b>{{lcAuthUser.name}}</b>!
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/account/profile">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            Account Profile
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="javascript: $('#frmLogout').submit()">
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
+            Logout
+          </a>
+        </div>
+      </li>
+      {{/if}}
+    </nav>
+
+
+  <form method="post">
+    <div class="card">
+        <div class="card-header">
+          <h4>Create New Post</h4>
+        </div>
+        <div class="card-header">
+          Title :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="title" name="title" style="width: 10cm;" >
+        </div>
+        <div class="card-header">
+          Tiny Des : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<textarea type="text" id="tinydes" name="tinydes" style="width: 15cm;"></textarea>
+        </div>
+        <div class="card-header">
+          Link Image : &nbsp&nbsp<input type="text" id="linkimage" name="linkimage" style="width: 10cm;">
+        </div>
+        <div class="card-header">
+          <label for="tag">Tag:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+          <select name="tag" id="tag">
+              <option value="1">Premium</option>
+              <option value="0">nomal</option>
+          </select>
+        </div>
+        <div class="card-header">
+          <label> Category:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+          <select name="category" id="category">
+            {{#each cat}}
+              <option  value="{{CatID}}">{{CatName}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label for=""></label>
+            <textarea name="FullDes" id="txtFullDes" class="form-control" cols="30" rows="10"></textarea>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-lg btn-success btn-block">
+            <i class="fa fa-check" aria-hidden="true"></i>
+            Submit
+          </button>
+        </div>
+      </div>
+  </form>
+

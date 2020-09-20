@@ -1,0 +1,443 @@
+{{!--   list: listSailient,
+        lstmostview: mostview,
+        lstnewpost: newpost,
+        lstnewpostbycat: newbycat
+--}}
+
+<div  class="row clearfix" style="border-bottom: solid black" >
+    <div style="padding-left: 0px; " class="col-md-7">
+        <div class="row">
+            
+            <div class="col-md-8" > 
+                <a href="/post/detail/{{list.[0].PostID}}">
+                <img  style="max-height: 300px;max-width:439px;"  class="img-fluid" src="{{list.[0].Imagelink}}" alt="No image">
+                </a>
+            </div>  
+            <div  class="col-md-4">
+                    <div class="">
+                        <a href="/post/detail/{{list.[0].PostID}}" class="post-title">
+                        {{list.[0].Title}}
+                        </a> 
+                    </div>   
+                    <div style="margin-left: 10px;" classs="post-content">
+                        <a class="post-content" href="/post/detail/{{list.[0].PostID}}"> {{list.[0].Tinycontent}}</a>     
+                    </div>
+             </div>      
+        </div>
+         <div style="max-height: 220px;" class="row" >
+            <div class="col-md-8" > 
+                <div class="row "style="background-color: rgb(241, 235, 235);">
+                    <div class="col-md-6">
+                     <p class="post-content-head">Lorem, ipsum dolor sllat iusto reprehenderit ex totam accusamus corporis, delectus impedit reiciendis in neque fugiat beatae maxime.</p>
+                    </div>
+                     <div class="col-md-6">
+                     <p class="post-content-head">Lorem, ipsum dolor sit amet consectetur adipisiciharum repellat iusto reprehenderit ex totam accusamus corporis, delectus impedit reiciendis in neque fugiat beatae maxime.</p>
+                    </div>
+                </div>
+            </div>  
+            <div style="background-color: rgb(241, 235, 235);border-left:solid rgb(224, 220, 220);" class="col-md-4">
+              
+                    <a href="/post/detail/{{list.[1].PostID}}" class="post-title">
+                       {{list.[1].Title}}
+                    </a>    
+               <br> 
+                <br>
+                
+                        <a class="post-content" href="/post/detail/{{list.[1].PostID}}"> {{list.[1].Tinycontent}}</a>     
+               
+             </div>      
+        </div>
+    </div>
+    <div style="max-height: 470px;" class="col-md-5">
+          <div >
+              <img width="460px" height="190px" class="img-music" src="https://i.ibb.co/q94wK8y/9007-jpg-wh300.jpg" alt="No image"> 
+        </div>
+        <div class="embed-responsive embed-responsive-1by1 video-second container-fluid">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/z35r-OeqLgQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
+      
+       
+    </div>
+</div>
+
+<div style="padding: 3px 0px 0px 0px;padding-bottom:15px" class="row" style="background-color:red">
+
+    <div style="border-right:solid 1px gray" class="col-md-5" >
+       
+        {{#each this.lstnewpost}}
+             <div style="margin-left:-15px; padding-top:5px; border-bottom:solid 1px gray" > 
+                <div  class="row"> 
+                    <div class="col-sm-5"> 
+                        <a href="/post/detail/{{PostID}}">
+                        <img class="card-img" src="{{Imagelink}}" alt="Suresh Dasari Card"> 
+                        </a>
+                    </div> 
+                    <div class="col-sm-7"> 
+                        <div > 
+
+                            <a href="/post/detail/{{PostID}}" class="post-title">{{Title}}</a>
+                            <p class="card-text vertical-card-text" >{{Tinycontent}}</p> 
+                        </div> 
+                    </div> 
+                </div> 
+            </div>
+
+        {{/each}}
+    </div>
+    <div class="col-md-7">
+        <div class="row">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a style="font-size: 1.5rem;" class="navbar-brand nav-right" href="/post/byCat/1">Tuyển Sinh</a>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link nav-right" href="/post/byCat/2">Du Học <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link nav-right" href="/post/byCat/4">Laliga <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link nav-right" href="/post/byCat/3">Champion Leage <span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div style="border-bottom:solid 1px gray" class="row">
+            <div style="background-color: redd; border-right:solid 1px gray;"  class="col-sm-7">
+               
+                    <div style="margin-left:0px; padding-top:5px;" > 
+                        <div  style="border-bottom:solid 1px gray" class="row"> 
+                            <div class="col-sm-5"> 
+                                <a href="/post/detail/{{postTuyenSinh.[0].PostID}}">
+                                <img class="card-img" src="{{postTuyenSinh.[0].Imagelink}}" alt="Suresh Dasari Card"> 
+                                </a>
+                            </div> 
+                            <div class="col-sm-7"> 
+                                <div > 
+                                    <a href="/post/detail/{{postTuyenSinh.[0].PostID}}" class="post-title">{{postTuyenSinh.[0].Title}}</a>
+                                    <p class="card-text vertical-card-text" >{{postTuyenSinh.[0].Tinycontent}}</p> 
+                                </div> 
+                            </div> 
+                        </div> 
+                        <div style="padding-top:5px ;" class="row"> 
+                            <div class="col-sm-5"> 
+                                <a href="/post/detail/{{postTuyenSinh.[1].PostID}}">
+                                <img class="card-img" src="{{postTuyenSinh.[1].Imagelink}}" alt="Suresh Dasari Card"> 
+                                </a>
+                            </div> 
+                            <div class="col-sm-7"> 
+                                <div > 
+                                    <a href="/post/detail/{{postTuyenSinh.[1].PostID}}" class="post-title">{{postTuyenSinh.[1].Title}}</a>
+                                    <p class="card-text vertical-card-text" >{{postTuyenSinh.[1].Tinycontent}}</p> 
+                                </div> 
+                            </div> 
+                        </div> 
+                        
+                    </div>
+            </div>
+            <div style="background-color: bluee;" class="col-sm-5">
+                <div class="row"> 
+                    <a href="/post/detail/{{postTuyenSinh.[2].PostID}}" class="post-title vetical-right-content">{{postTuyenSinh.[2].Title}}</a>
+                </div> 
+                <div class="row"> 
+                    <a href="/post/detail/{{postTuyenSinh.[3].PostID}}" class="post-title vetical-right-content">{{postTuyenSinh.[3].Title}}</a>
+                </div>
+                <div class="row"> 
+                    <a style="border-bottom: none;" href="/post/detail/{{postTuyenSinh.[4].PostID}}" class="post-title vetical-right-content">{{postTuyenSinh.[4].Title}}</a>
+                </div>
+            </div>
+            
+        </div>
+
+        {{!-- =================================== second====================================== --}}
+         <div class="row">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a style="font-size: 1.5rem;" class="navbar-brand nav-right" href="/post/byCat/5">Công Nghiệp</a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link nav-right" href="/post/byCat/6">Nông Nghiệp <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link nav-right" href="/post/byCat/9">Nhà <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link nav-right" href="/post/byCat/8">Tư Vấn <span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+                <div style="border-bottom:solid 1px gray" class="row">
+            <div style="background-color: redd; border-right:solid 1px gray;"  class="col-sm-7">
+               
+                    <div style="margin-left:0px; padding-top:5px;" > 
+                        <div  style="border-bottom:solid 1px gray" class="row"> 
+                            <div class="col-sm-5"> 
+                                <a href="/post/detail/{{postCongNghiep.[0].PostID}}">
+                                <img class="card-img" src="{{postCongNghiep.[0].Imagelink}}" alt="Suresh Dasari Card"> 
+                                </a>
+                            </div> 
+                            <div class="col-sm-7"> 
+                                <div > 
+                                    <a href="/post/detail/{{postCongNghiep.[0].PostID}}" class="post-title">{{postCongNghiep.[0].Title}}</a>
+                                    <p class="card-text vertical-card-text" >{{postCongNghiep.[0].Tinycontent}}</p> 
+                                </div> 
+                            </div> 
+                        </div> 
+                        <div style="padding-top:5px ;" class="row"> 
+                            <div class="col-sm-5"> 
+                                <a href="/post/detail/{{postCongNghiep.[1].PostID}}">
+                                <img class="card-img" src="{{postCongNghiep.[1].Imagelink}}" alt="Suresh Dasari Card"> 
+                                </a>
+                            </div> 
+                            <div class="col-sm-7"> 
+                                <div > 
+                                    <a href="/post/detail/{{postCongNghiep.[1].PostID}}" class="post-title">{{postCongNghiep.[1].Title}}</a>
+                                    <p class="card-text vertical-card-text" >{{postCongNghiep.[1].Tinycontent}}</p> 
+                                </div> 
+                            </div> 
+                        </div> 
+                        
+                    </div>
+            </div>
+            <div style="background-color: bluee;" class="col-sm-5">
+                <div class="row"> 
+                    <a href="/post/detail/{{postCongNghiep.[2].PostID}}" class="post-title vetical-right-content">{{postCongNghiep.[2].Title}}</a>
+                </div> 
+                <div class="row"> 
+                    <a href="/post/detail/{{postCongNghiep.[3].PostID}}" class="post-title vetical-right-content">{{postCongNghiep.[3].Title}}</a>
+                </div>
+                <div class="row"> 
+                    <a style="border-bottom: none;" href="/post/detail/{{postCongNghiep.[4].PostID}}" class="post-title vetical-right-content">{{postCongNghiep.[4].Title}}</a>
+                </div>
+            </div>
+            
+        </div>
+        {{!-- =================================== third====================================== --}}
+                 <div class="row">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a style="font-size: 1.5rem;" class="navbar-brand nav-right" href="#">Phụ Nữ</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link nav-right" href="12">Đàn Ông <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link nav-right" href="10">Cuộc Sống <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link nav-right" href="7">Pháp Luật <span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+                <div style="border-bottom:solid 1px gray" class="row">
+            <div style="background-color: redd; border-right:solid 1px gray;"  class="col-sm-7">
+               
+                    <div style="margin-left:0px; padding-top:5px;" > 
+                        <div  style="border-bottom:solid 1px gray" class="row"> 
+                            <div class="col-sm-5"> 
+                                <a href="/post/detail/{{postPhuNu.[0].PostID}}">
+                                <img class="card-img" src="{{postPhuNu.[0].Imagelink}}" alt="Suresh Dasari Card"> 
+                                </a>
+                            </div> 
+                            <div class="col-sm-7"> 
+                                <div > 
+                                    <a href="/post/detail/{{postPhuNu.[0].PostID}}" class="post-title">{{postPhuNu.[0].Title}}</a>
+                                    <p class="card-text vertical-card-text" >{{postPhuNu.[0].Tinycontent}}</p> 
+                                </div> 
+                            </div> 
+                        </div> 
+                        <div style="padding-top:5px ;" class="row"> 
+                            <div class="col-sm-5"> 
+                                <a href="/post/detail/{{postPhuNu.[1].PostID}}">
+                                <img class="card-img" src="{{postPhuNu.[1].Imagelink}}" alt="Suresh Dasari Card"> 
+                                </a>
+                            </div> 
+                            <div class="col-sm-7"> 
+                                <div > 
+                                    <a href="/post/detail/{{postPhuNu.[1].PostID}}" class="post-title">{{postPhuNu.[1].Title}}</a>
+                                    <p class="card-text vertical-card-text" >{{postPhuNu.[1].Tinycontent}}</p> 
+                                </div> 
+                            </div> 
+                        </div> 
+                        
+                    </div>
+            </div>
+            <div style="background-color: bluee;" class="col-sm-5">
+                <div class="row"> 
+                    <a href="/post/detail/{{postPhuNu.[2].PostID}}" class="post-title vetical-right-content">{{postPhuNu.[2].Title}}</a>
+                </div> 
+                <div class="row">   
+                    <a href="/post/detail/{{postPhuNu.[3].PostID}}" class="post-title vetical-right-content">{{postPhuNu.[3].Title}}</a>
+                </div>
+                <div class="row"> 
+                    <a style="border-bottom: none;" href="/post/detail/{{postPhuNu.[4].PostID}}" class="post-title vetical-right-content">{{postPhuNu.[4].Title}}</a>
+                </div>
+            </div>
+            
+        </div>
+        {{!-- =================================== 4====================================== --}}
+                 <div class="row">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a style="font-size: 1.5rem;" class="navbar-brand nav-right" href="/post/byCat/5">Công Nghiệp</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link nav-right" href="/post/byCat/6">Nông Nghiệp <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link nav-right" href="/post/byCat/9">Nhà <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link nav-right" href="/post/byCat/8">Tư Vấn <span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+                <div style="border-bottom:solid 1px gray" class="row">
+            <div style="background-color: redd; border-right:solid 1px gray;"  class="col-sm-7">
+               
+                    <div style="margin-left:0px; padding-top:5px;" > 
+                        <div  style="border-bottom:solid 1px gray" class="row"> 
+                            <div class="col-sm-5"> 
+                                <a href="/post/detail/{{postTuyenSinh.[0].PostID}}">
+                                <img class="card-img" src="{{postTuyenSinh.[0].Imagelink}}" alt="Suresh Dasari Card"> 
+                                </a>
+                            </div> 
+                            <div class="col-sm-7"> 
+                                <div > 
+                                    <a href="/post/detail/{{postTuyenSinh.[0].PostID}}" class="post-title">{{postTuyenSinh.[0].Title}}</a>
+                                    <p class="card-text vertical-card-text" >{{postTuyenSinh.[0].Tinycontent}}</p> 
+                                </div> 
+                            </div> 
+                        </div> 
+                        <div style="padding-top:5px ;" class="row"> 
+                            <div class="col-sm-5"> 
+                                <a href="/post/detail/{{postTuyenSinh.[1].PostID}}">
+                                <img class="card-img" src="{{postTuyenSinh.[1].Imagelink}}" alt="Suresh Dasari Card">
+                                 </a>
+                            </div> 
+                            <div class="col-sm-7"> 
+                                <div > 
+                                    <a href="/post/detail/{{postTuyenSinh.[1].PostID}}" class="post-title">{{postTuyenSinh.[1].Title}}</a>
+                                    <p class="card-text vertical-card-text" >{{postTuyenSinh.[1].Tinycontent}}</p> 
+                                </div> 
+                            </div> 
+                        </div> 
+                        
+                    </div>
+            </div>
+            <div style="background-color: bluee;" class="col-sm-5">
+                <div class="row"> 
+                    <a href="/post/detail/{{postTuyenSinh.[2].PostID}}" class="post-title vetical-right-content">{{postTuyenSinh.[2].Title}}</a>
+                </div> 
+                <div class="row"> 
+                    <a href="/post/detail/{{postTuyenSinh.[3].PostID}}" class="post-title vetical-right-content">{{postTuyenSinh.[3].Title}}</a>
+                </div>
+                <div class="row"> 
+                    <a style="border-bottom: none;" href="/post/detail/{{postTuyenSinh.[4].PostID}}" class="post-title vetical-right-content">{{postTuyenSinh.[4].Title}}</a>
+                </div>
+            </div>
+            
+        </div>
+    
+        {{!-- =================================== end====================================== --}}
+
+    </div>
+        
+</div>
+<div style="border-top:solid gray; padding-top:20px;border-bottom:solid gray" class="row">
+    <div class="col-md-4">
+            <div style="padding:3px;float:left">
+                <div  class="card" style="width: 20rem;">
+                    <a href="/post/detail/{{lstnewpostbycat.[0].PostID}}">
+                    <img class="card-img-top" src="{{lstnewpostbycat.[0].Imagelink}}" alt="No image">
+                    </a>
+                    <div class="card-body">
+                        <a href="/post/detail/{{lstnewpostbycat.[0].PostID}}" class="post-title">{{lstnewpostbycat.[0].Title}}</a>
+                        <p class="card-text vertical-card-text"> {{lstnewpostbycat.[0].Tinycontent}}</p>
+                    </div>
+                </div>
+            </div>
+            <div style="padding:3px;float:left">
+                <div class="card" style="width: 20rem;">
+                    <a href="/post/detail/{{lstnewpostbycat.[1].PostID}}">
+                    <img class="card-img-top" src="{{lstnewpostbycat.[1].Imagelink}}" alt="No image">
+                    </a>
+                    <div class="card-body">
+                        <a href="/post/detail/{{lstnewpostbycat.[1].PostID}}" class="post-title">{{lstnewpostbycat.[1].Title}}</a>
+                        <p class="card-text vertical-card-text"> {{lstnewpostbycat.[1].Tinycontent}}</p>
+
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div  class="col-md-4">
+                    <div style="padding:3px;float:left">
+                <div class="card" style="width: 20rem;">
+                    <a href="/post/detail/{{lstnewpostbycat.[2].PostID}}">
+                    <img class="card-img-top" src="{{lstnewpostbycat.[2].Imagelink}}" alt="No image">
+                    </a>
+                    <div class="card-body">
+                         <a href="/post/detail/{{lstnewpostbycat.[2].PostID}}" class="post-title">{{lstnewpostbycat.[2].Title}}</a>
+                        <p class="card-text vertical-card-text"> {{lstnewpostbycat.[2].Tinycontent}}</p>
+                    </div>
+                </div>
+            </div>
+            <div style="padding:3px;float:left">
+                <div class="card" style="width: 20rem;">
+                    <a href="/post/detail/{{lstnewpostbycat.[3].PostID}}">
+                    <img class="card-img-top" src="{{lstnewpostbycat.[3].Imagelink}}" alt="No image">
+                    </a>
+                    <div class="card-body">
+                        <a href="/post/detail/{{lstnewpostbycat.[3].PostID}}" class="post-title">{{lstnewpostbycat.[3].Title}}</a>                       
+                        <p class="card-text vertical-card-text"> {{lstnewpostbycat.[3].Tinycontent}}</p>
+
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div  class="col-md-4">
+                    <div style="padding:3px;float:left">
+                <div class="card" style="width: 20rem;">
+                    <a href="/post/detail/{{lstnewpostbycat.[4].PostID}}">
+                    <img class="card-img-top" src="{{lstnewpostbycat.[4].Imagelink}}" alt="No image">
+                    </a>
+                    <div class="card-body">
+                        <a href="/post/detail/{{lstnewpostbycat.[5].PostID}}" class="post-title">{{lstnewpostbycat.[4].Title}}</a>
+                        <p class="card-text vertical-card-text"> {{lstnewpostbycat.[4].Tinycontent}}</p>
+                    </div>
+                </div>
+            </div>
+            <div style="padding:3px;float:left">
+                <div class="card" style="width: 20rem;">
+                    <a href="/post/detail/{{lstnewpostbycat.[5].PostID}}">
+                    <img class="card-img-top" src="{{lstnewpostbycat.[5].Imagelink}}" alt="No image">
+                    </a>
+                    <div class="card-body">
+                         <a href="/post/detail/{{lstnewpostbycat.[5].PostID}}" class="post-title">{{lstnewpostbycat.[5].Title}}</a>
+                        <p class="card-text vertical-card-text"> {{lstnewpostbycat.[5].Tinycontent}}</p>
+
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+  <div class="row" style="color: rgb(0, 241, 255); margin-top:15px"><h3>Relax</h3></div>
+  <div class="row">
+    <iframe width="1140" height="340" src="https://www.youtube.com/embed/Zzn9-ATB9aU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+                      
+                    

@@ -1,0 +1,38 @@
+
+<div class="container">
+  
+<div class="card">
+  <div class="card-header">
+    <h4>Posts</h4>
+  </div>
+  {{#if this.empty}}
+  <div class="card-body">
+    <p class="card-text">Không có dữ liệu.</p>
+  </div>
+  {{else}}
+  <div class="card-body">
+    <div class="row">
+      {{#each this.post}}
+      <div class="col-sm-3 mb-3">
+        <div class="card h-100">
+          <img src="{{Imagelink}}" alt="{{Title}}" title="{{Title}}"
+            class="card-img-top">
+          <div class="card-body">
+            <h6 class="card-title">{{Title}}</h6>
+             <h4 class="card-title text-danger">{{ Date}}</h4> 
+            <p class="card-text">{{Tinycontent}}</p>
+          </div>
+          <div class="card-footer">
+            <a class="btn btn-sm btn-outline-primary" href="/post/detail/{{PostID}}" role="button">
+              <i class="fa fa-eye" aria-hidden="true"></i>
+              Details
+            </a>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    </div>
+    {{/if}}
+    </div>
+</div>

@@ -1,0 +1,226 @@
+        {{!-- posts: list,
+        elseCat:elseCat
+        empty: list.length === 0,
+        page_items,
+        prev_value: page - 1,
+        next_value: page + 1,
+        can_go_prev: page > 1,
+        can_go_next: page < nPages --}}
+
+
+  <div>
+    <h4>Posts</h4>
+  </div>
+  {{#if this.empty}}
+  <div class="card-body">
+    <p class="card-text">Không có dữ liệu.</p>
+  </div>
+  {{else}}
+<div  class="row " style="border-bottom: solid black" >
+    <div style="padding-left: 0px; " class="col-md-7">
+
+        <div class="" style="margin:0px">
+          <a href="/post/detail/{{posts.[0].PostID}}">
+              <img   class="img-fluid" src="{{posts.[0].Imagelink}}" alt="No image">
+            </a>
+        </div>
+
+         <div style=" margin:0px;max-height: 220px;" class="row" >
+                    <div class="col-sm-4" style="margin: 0px;">
+                        <a href="/post/detail/{{posts.[0].PostID}}" class="post-title">
+                          {{posts.[0].Title}}
+                        </a>                    
+                     </div>
+                     <div class="col-sm-4">
+                        <a href="/post/detail/{{posts.[1].PostID}}" class="post-title">
+                          {{posts.[1].Title}}
+                        </a>    
+                        <br>
+                        <a class="post-content" href="/post/detail/{{posts.[1].PostID}}"> 
+                          {{posts.[1].Tinycontent}}
+                        </a>                    
+                      </div>
+            <div  class="col-sm-4">
+                <a href="/post/detail/{{posts.[2].PostID}}" class="post-title">
+                    {{posts.[2].Title}}
+                </a>    
+                <br>
+                <a class="post-content" href="/post/detail/{{posts.[2].PostID}}"> {{posts.[2].Tinycontent}}</a>     
+            </div>      
+        </div>
+    </div>
+    <div style="max-height: 470px;" class="col-md-5">
+          <div >
+              <img width="460px" height="190px" class="img-music" src="https://i.ibb.co/q94wK8y/9007-jpg-wh300.jpg" alt="No image"> 
+        </div>
+        <div style="max-height:425px" class="embed-responsive embed-responsive-1by1 video-second container-fluid">
+        <iframe  src="https://www.youtube.com/embed/TuPbE08rLy8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>    
+    </div>
+</div>
+<div  class="row">
+  <div class="col-md-7" style="border-right: solid 0.5px gray;">
+     <div style="margin-left:-15px; padding-top:5px; border-bottom:solid 1px gray" > 
+      <div  class="row"> 
+        <div class="col-sm-5"> 
+          <a href="/post/detail/{{posts.[3].PostID}}">
+          <img style="max-height: 150px;" class="card-img" src="{{posts.[3].Imagelink}}" alt="Suresh Dasari Card"> 
+          </a>
+        </div> 
+        <div class="col-sm-7"> 
+            <a href="/post/detail/{{posts.[3].PostID}}" class="post-title">{{posts.[3].Title}}</a>
+            <p class="card-text vertical-card-texst" >{{posts.[3].Tinycontent}}</p>  
+        </div> 
+        </div> 
+    </div>
+         <div style="margin-left:-15px; padding-top:5px; border-bottom:solid 1px gray" > 
+      <div  class="row"> 
+        <div class="col-sm-5"> 
+          <a href="/post/detail/{{posts.[4].PostID}}">
+          <img style="max-height: 150px;" class="card-img" src="{{posts.[4].Imagelink}}" alt="Suresh Dasari Card"> 
+          </a>
+        </div> 
+        <div class="col-sm-7"> 
+            <a href="/post/detail/{{posts.[4].PostID}}" class="post-title">{{posts.[4].Title}}</a>
+            <p class="card-text vertical-card-texst" >{{posts.[4].Tinycontent}}</p>  
+        </div> 
+        </div> 
+    </div>
+         <div style="margin-left:-15px; padding-top:5px; border-bottom:solid 1px gray" > 
+      <div  class="row"> 
+        <div class="col-sm-5"> 
+          <a href="/post/detail/{{posts.[5].PostID}}">
+          <img style="max-height: 150px;" class="card-img" src="{{posts.[5].Imagelink}}" alt="Suresh Dasari Card"> 
+          </a>
+        </div> 
+        <div class="col-sm-7"> 
+            <a href="/post/detail/{{posts.[5].PostID}}" class="post-title">{{posts.[5].Title}}</a>
+            <p class="card-text vertical-card-texst" >{{posts.[5].Tinycontent}}</p>  
+        </div> 
+        </div> 
+    </div>
+         <div style="margin-left:-15px; padding-top:5px; border-bottom:solid 1px gray" > 
+      <div  class="row"> 
+        <div class="col-sm-5"> 
+          <a href="/post/detail/{{posts.[6].PostID}}">
+          <img style="max-height: 150px;" class="card-img" src="{{posts.[6].Imagelink}}" alt="Suresh Dasari Card"> 
+          </a>
+        </div> 
+        <div class="col-sm-7"> 
+            <a href="/post/detail/{{posts.[6].PostID}}" class="post-title">{{posts.[6].Title}}</a>
+            <p class="card-text vertical-card-texst" >{{posts.[6].Tinycontent}}</p>  
+        </div> 
+        </div> 
+    </div>
+         <div style="margin-left:-15px; padding-top:5px; border-bottom:solid 1px gray" > 
+      <div  class="row"> 
+        <div class="col-sm-5"> 
+          <a href="/post/detail/{{posts.[7].PostID}}">
+          <img style="max-height: 150px;" class="card-img" src="{{posts.[7].Imagelink}}" alt="Suresh Dasari Card"> 
+          </a>
+        </div> 
+        <div class="col-sm-7"> 
+            <a href="/post/detail/{{posts.[7].PostID}}" class="post-title">{{posts.[7].Title}}</a>
+            <p class="card-text vertical-card-texst" >{{posts.[7].Tinycontent}}</p>  
+        </div> 
+        </div> 
+    </div>
+             <div style="margin-left:-15px; padding-top:5px; border-bottom:solid 1px gray" > 
+      <div  class="row"> 
+        <div class="col-sm-5"> 
+          <a href="/post/detail/{{posts.[8].PostID}}">
+          <img style="max-height: 150px;" class="card-img" src="{{posts.[8].Imagelink}}" alt="Suresh Dasari Card"> 
+          </a>
+        </div> 
+        <div class="col-sm-7"> 
+            <a href="/post/detail/{{posts.[8].PostID}}" class="post-title">{{posts.[8].Title}}</a>
+            <p class="card-text vertical-card-texst" >{{posts.[8].Tinycontent}}</p>  
+        </div> 
+        </div> 
+    </div>
+             <div style="margin-left:-15px; padding-top:5px; border-bottom:solid 1px gray" > 
+      <div  class="row"> 
+        <div class="col-sm-5"> 
+          <a href="/post/detail/{{posts.[9].PostID}}">
+          <img class="card-img" src="{{posts.[9].Imagelink}}" alt="Suresh Dasari Card"> 
+          </a>
+        </div> 
+        <div class="col-sm-7"> 
+            <a href="/post/detail/{{posts.[9].PostID}}" class="post-title">{{posts.[9].Title}}</a>
+            <p class="card-text vertical-card-texst" >{{posts.[9].Tinycontent}}</p>  
+        </div> 
+        </div> 
+    </div>
+             <div style="margin-left:-15px; padding-top:5px; border-bottom:solid 1px gray" > 
+      <div  class="row"> 
+        <div class="col-sm-5"> 
+          <a href="/post/detail/{{posts.[10].PostID}}">
+          <img class="card-img" src="{{posts.[10].Imagelink}}" alt="Suresh Dasari Card"> 
+          </a>
+        </div> 
+        <div class="col-sm-7"> 
+            <a href="/post/detail/{{posts.[10].PostID}}" class="post-title">{{posts.[10].Title}}</a>
+            <p class="card-text vertical-card-texst" >{{posts.[10].Tinycontent}}</p>  
+        </div> 
+        </div> 
+    </div>
+  </div>
+  <div class="col-md-5">
+    {{#each elseCat}}
+    <div style="margin-left:-15px; padding-top:5px; border-bottom:solid 1px gray" > 
+      <div  class="row">         
+        <div class="col-sm-7"> 
+          <a href="/post/detail/{{PostID}}" class="post-title">{{Title}}</a>
+          <p class="card-text vertical-card-text" >{{Tinycontent}}</p>  
+        </div> 
+        <div class="col-sm-5"> 
+          <a href="/post/detail/{{PostID}}">
+          <img style="max-height: 120px;" class="card-img" src="{{Imagelink}}" alt="Suresh Dasari Card"> 
+          </a>
+        </div> 
+      </div> 
+    </div>
+    {{/each}}
+
+  </div>
+</div>  
+  <div class="row" style="color: rgb(0, 241, 255);"><h3>Relax</h3></div>
+  <div class="row">
+    <iframe width="1140" height="340" src="https://www.youtube.com/embed/Zzn9-ATB9aU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+
+
+  {{!-- <div class="card-body">
+
+    <nav aria-label="...">
+      <ul class="pagination">
+        <li class="page-item {{#unless can_go_prev}}disabled{{/unless}}">
+          <a class="page-link" href="?page={{prev_value}}" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        {{#each this.page_items}}
+        {{#if isActive}}
+        <li class="page-item active" aria-current="page">
+          <span class="page-link">
+            {{value}}
+            <span class="sr-only">(current)</span>
+          </span>
+        </li>
+        {{else}}
+        <li class="page-item {{#if isDisabled}}disabled{{/if}}">
+          <a class="page-link" href="?page={{value}}">{{value}}</a>
+        </li>
+        {{/if}}
+        {{/each}}
+        <li class="page-item {{#unless can_go_next}}disabled{{/unless}}">
+          <a class="page-link" href="?page={{next_value}}" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>  Phan trang --}} 
+  {{/if}}
+  

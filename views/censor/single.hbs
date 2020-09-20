@@ -1,0 +1,48 @@
+
+  <div class="container">
+    <div class="card">
+  <div class="card-header">
+    <h4>Review</h4>
+  </div>
+  <div class="card-body">
+    <h4 class="card-title">{{this.post.Title}}</h4>
+    <img src ="{{this.post.Imagelink}}"> 
+    <p class="card-text">
+      {{{this.post.Content}}}
+    </p>
+    </br> 
+    <div class="row">
+      <div class="col-sm-4">
+          <form method="post">
+             Reason : <input type="text" id="reason" name="reason" >
+         <button  class="btn btn-secondary" type="submit" name="deny" id="deny"> deny</button>
+    </form>
+
+      </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-6">
+       <form method="post">
+         <label for="tag">Tag:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+            <select name="tag" id="tag">
+                <option value="1">Premium</option>
+                <option value="0">nomal</option>
+            </select>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <label> Category:&nbsp&nbsp</label>
+        <select name="category" id="category">
+        {{#each cat}}
+          <option  value="{{CatID}}">{{CatName}}</option>
+        {{/each}}
+         </select>
+         <button style="margin-left: 15px;" class="btn btn-secondary" type="submit" name="Censor"> Censor</button>
+    </form>
+    </div>  
+    </div>
+    
+
+  </div>
+  <div class="card-footer text-muted">
+     {{this.post.Date}}
+  </div>
+</div>
+  </div>

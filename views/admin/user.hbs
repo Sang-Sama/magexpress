@@ -1,0 +1,49 @@
+
+    <div class="container">
+    <div class="card">
+  <div class="card-header d-flex justify-content-between">
+    <h4>List User</h4>
+  </div>
+  {{#if this.empty}}
+  <div class="card-body">
+    <p class="card-text">Không có dữ liệu.</p>
+  </div>
+  {{else}}
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+       <tr>
+        <th scope="row" class="text-center">ID</th>
+        <td>Name</td>
+        <td>Username</td>
+        <td>Permission</td>
+        <td>Dob</td>
+        <td>Email</td>
+        <td>TimeActive</td>
+      </tr>
+      {{#each this.listuser}}
+      <tr>
+        <th scope="row" class="text-center">{{ID}}</th>
+        <td>{{Name}}</td>
+        <td>{{Username}}</td>
+        <td>{{Permission}}</td>
+        <td>{{Dob}}</td>
+        <td>{{Email}}</td>
+        <td>{{TimeActive}}</td>
+        <td class="text-right">
+          <a class="btn btn-primary btn-sm" href="/admin/user/{{ID}}" role="button" title="Edit Category">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </a>
+          {{!-- <a class="btn btn-danger btn-sm" href="javascript:;" role="button">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </a> --}}
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  {{/if}}

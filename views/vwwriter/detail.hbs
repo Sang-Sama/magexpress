@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse " id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+         <a class="nav-link" href="/writer">Bài Viết Mới</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="/writer/admit">Đã Được Duyệt </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/writer/deny">Bị Từ Chối</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="/writer/approvedyet">Chưa Duyệt</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+       <form id="frmLogout" action="/account/logout" method="POST"></form>
+      {{#if lcIsAuthenticated}}
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-user" aria-hidden="true"></i>
+          Welcome, <b>{{lcAuthUser.name}}</b>!
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/account/profile">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            Account Profile
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="javascript: $('#frmLogout').submit()">
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
+            Logout
+          </a>
+        </div>
+      </li>
+      {{/if}}
+    </ul>
+  </div>
+</nav>
+<div  class="row">
+  <div  class="col-md-12" style="border-right: solid 0.5px gray;"> 
+      <div >
+        <h6 style="text-align: right;">{{post.Date}}</h6>
+        <h3 style="text-align: left;"><b>{{post.Title}}</b></h3>
+        <h5 class="post-content-detail ">{{{post.Content}}}</h5>
+        <p style="text-align: right;font: 400 28px arial;"><strong>{{post.Writer}}</strong></p>
+      </div>
+      {{!-- ==================================== comment============================== --}}
+      <div class="comment-content">
+              <div class="post-container">
+                <div class="card-title"> <h3>Ý kiến ({{comment.length}})</h3></div>
+                {{#each comment}}
+                <div class="post-detail">
+                  <div class="user-info">
+                    <h5><a href="timeline.html" class="profile-link">{{this.UserName}}</a> </h5>
+                    
+                  </div>
+                  <div class="reaction">
+                    <p class="text-muted">{{this.Time}} <i class="fa fa-thumbs-up"></i></p>
+                  </div>
+                  <div class="line-divider"></div>
+                  <div class="post-textt">
+                    <p>{{this.Content}} </p>
+                  </div>
+                  <div class="line-divider"></div>
+                </div>
+                {{/each}}
+              </div>
+        </div> 
+        <form method="POST">
+                  <div class="post-comment">
+                    <input type="text" class="form-control" name="comment" placeholder="Post a comment">
+                  </div>
+                  </form>
+    </div>
+</div>
+<div class="row">
+  <img src="https://i.ibb.co/99cQGwg/spotify-80s-ads-2019.jpg" class="img-fluid" alt="">
+</div>
+
+

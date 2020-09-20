@@ -1,0 +1,70 @@
+<div id="preloader">
+  <div id="status">&nbsp;</div>
+</div>
+<a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+<div class="container-fluid">
+  <header id="header">
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <div class="header_top">
+          <div class="header_top_left">
+            <ul class="top_nav">
+              <li><a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  View With
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/admin">Admin</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="/writer">Writer</a>
+                </div>
+              </li>
+              <form id="frmLogout" action="/account/logout" method="POST"></form>
+              <div class="header_top_right" style="margin-top: -30px;">
+                {{#if lcIsAuthenticated}}
+                <li class="nav-item dropdown">
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/account/profile">
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                      Account Profile
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="javascript: $('#frmLogout').submit()">
+                      <i class="fa fa-sign-out" aria-hidden="true"></i>
+                      Logout
+                    </a>
+                  </div>
+                </li>
+                {{else}}
+                <li>
+                  <a href="/account/login">
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>
+                    Login
+                  </a>
+                </li>
+                <li>
+                  <a href="/account/register">
+                    <i class="fa fa-user-plus" aria-hidden="true"></i>
+                    Register
+                  </a>
+                </li>
+                {{/if}}
+            </ul>
+          </div>
+            <form class="search_form" method="POST" action="/post/search">
+              <input type="text" placeholder="Text to Search" aria-label="Search" name="search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+        </div>
+        <div class="header_bottom">
+          <div class="header_bottom_left"><a class="logo" href="/">mag<strong>Express</strong> <span>A Pro Magazine Template</span></a></div>
+          <div class="header_bottom_right"><a href="#"><img src="/public/images/addbanner_728x90_V1.jpg" alt=""></a></div>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
